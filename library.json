@@ -1,0 +1,12 @@
+{
+    "id": "{E13506C7-5C67-1634-7F57-8B2761C488CC}",
+    "name": "WaermemengenZaehler",
+    "author": "Symcon GmbH",
+    "url": "https://www.symcon.de/de/",
+    "compatibility": {
+        "version": "6.0"
+    },
+    "version": "1.0",
+    "build": 0,
+    "date": 0
+}

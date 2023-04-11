@@ -1,0 +1,12 @@
+{
+    "id": "{E91CE03A-D8FF-6D6B-A50E-7B430D664D4F}",
+    "name": "WaermemengenZaehler",
+    "type": 3,
+    "vendor": "",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "WMZ",
+    "url": "https://www.symcon.de/de/"
+}
