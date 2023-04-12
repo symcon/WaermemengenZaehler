@@ -3,7 +3,9 @@
     "name": "WaermemengenZaehler",
     "type": 3,
     "vendor": "",
-    "aliases": [],
+    "aliases": [
+        "Wärmemengenzähler"
+    ],
     "parentRequirements": [],
     "childRequirements": [],
     "implemented": [],

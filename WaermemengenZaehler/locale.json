@@ -1,8 +1,14 @@
 {
     "translations": {
         "de": {
-            "Translation 1": "Übersetzung 1",
-            "Translation 2": "Übersetzung 2"
+            "Temperature Input": "Temperatur Eingang",
+            "Temperature Output": "Temperatur Ausgang",
+            "Water Meter": "Wasseruhr",
+            "Energy": "Energie",
+            "Power": "Leistung",
+            "Some variables are not exist": "Einige Variablen extistieren nicht",
+            "False profile on the temperature variables": "Die Temperatur Variablen haben ein falsches Profil",
+            "False profile on the water meter variable": "Die Wasseruhr hat ein falsches Profil"
         }
     }
 }
