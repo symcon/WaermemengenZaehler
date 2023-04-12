@@ -1,5 +1,5 @@
 # WaermemengenZaehler
-Beschreibung des Moduls.
+Berechnet die Leistung und Energie eines Wärmemengen Zähler
 
 ### Inhaltsverzeichnis
 
@@ -13,7 +13,8 @@ Beschreibung des Moduls.
 
 ### 1. Funktionsumfang
 
-*
+* Berechnung der Energie
+* Berechnung der Leistung 
 
 ### 2. Voraussetzungen
 
@@ -31,37 +32,34 @@ Beschreibung des Moduls.
 
 __Konfigurationsseite__:
 
-Name     | Beschreibung
--------- | ------------------
-         |
-         |
+Name               | Beschreibung
+------------------ | ------------------
+Temperatur Eingang | Variable der oberen Temperatur
+Temperatur Ausgang | Variable der unteren Temperatur
+Wasseruhr          | Variable für die Wasseruhr
 
-### 5. Statusvariablen und Profile
+### 5. Statusvariablen
 
 Die Statusvariablen/Kategorien werden automatisch angelegt. Das Löschen einzelner kann zu Fehlfunktionen führen.
 
 #### Statusvariablen
 
-Name   | Typ     | Beschreibung
------- | ------- | ------------
-       |         |
-       |         |
-
-#### Profile
-
-Name   | Typ
------- | -------
-       |
-       |
-
-### 6. WebFront
-
-Die Funktionalität, die das Modul im WebFront bietet.
+Name     | Typ     | Beschreibung
+-------- | ------- | -----------
+Leistung | float   | Berechnete Leistung aus der Formel: P = (m \* c \* ( T2 - T1 )) / t
+Energie  | float   | Berechnete Energie aus der Formel: E = (P * ( T2 - T1 )) / t
 
 ### 7. PHP-Befehlsreferenz
 
-`boolean WMZ_BeispielFunktion(integer $InstanzID);`
-Erklärung der Funktion.
+`boolean WMZ_UpdatePower(integer $InstanzID);`
+Berechnet die Leistung anhand der im Konfigurationsformular eingestellten Variablen
 
 Beispiel:
-`WMZ_BeispielFunktion(12345);`
+`WMZ_UpdatePower(12345);`
+
+
+`boolean WMZ_UpdateEnergy(integer $InstanzID);`
+Berechnet die Energie anhand der im Konfigurationsformular eingestellten Variablen
+
+Beispiel:
+`WMZ_UpdateEnergy(12345);`

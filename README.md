@@ -3,4 +3,4 @@
 Folgende Module beinhaltet das WaermemengenZaehler Repository:
 
 - __WaermemengenZaehler__ ([Dokumentation](WaermemengenZaehler))  
-	Kurze Beschreibung des Moduls.
+	Berechnet die Leistung und Energie eines Wärmemengen Zähler
