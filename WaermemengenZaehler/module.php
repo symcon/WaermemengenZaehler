@@ -67,10 +67,11 @@ declare(strict_types=1);
             $temperatureOut = $this->GetValue($this->ReadPropertyInteger('TemperatureVariableOutputID'));
             $waterMeter = $this->GetValue($this->ReadPropertyInteger('WaterMeterID'));
 
+            //Delta T = temperatureOut - temperatureIn 
             //P = (m * c * Delta T) / t
             //c = 4181 Joule/(Kg*K) <- Specific heat capacity of water
 
-            $power = ($waterMeter * 4181 * ($temperatureIn - $temperatureOut)) / 15 * 60;
+            $power = ($waterMeter * 4181 * ($temperatureOut - $temperatureIn)) / 15 * 60;
 
             $this->SetValue('Power', $power);
         }
@@ -78,7 +79,7 @@ declare(strict_types=1);
         public function UpdateEnergy()
         {
             $power = $this->GetValue('Power');
-            $temperature = $this->GetValue($this->ReadPropertyInteger('TemperatureVariableInputID')) - $this->GetValue($this->ReadPropertyInteger('TemperatureVariableOutputID'));
+            $temperature = $this->GetValue($this->ReadPropertyInteger('TemperatureVariableOutputID')) - $this->GetValue($this->ReadPropertyInteger('TemperatureVariableInputID'));
 
             //E = (P * Delta T ) / 3600 * 1000
             $energy = ($power * $temperature) / 3600 * 1000;
