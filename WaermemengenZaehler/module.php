@@ -12,7 +12,7 @@ declare(strict_types=1);
             $this->RegisterPropertyInteger('TemperatureVariableOutputID', 1);
             $this->RegisterPropertyInteger('WaterMeterID', 1);
 
-            $this->RegisterTimer('UpdatePower', 15 * 60 * 1000, 'WMZ_UpdatePower($_IPS[\'TARGET\']); WMZ_UpdateEnergy($_IPS[\'TARGET\']);');
+            $this->RegisterTimer('UpdateWaterMeter', 15 * 60 * 1000, 'WMZ_UpdatePower($_IPS[\'TARGET\']); WMZ_UpdateEnergy($_IPS[\'TARGET\']);');
 
             $this->RegisterVariableFloat('Power', $this->Translate('Power'), '~Watt.3680', 0);
             $this->RegisterVariableFloat('Energy', $this->Translate('Energy'), '~Electricity', 1);
@@ -57,15 +57,16 @@ declare(strict_types=1);
             $this->SetStatus(102);
 
             //First calculation of the Power and the Energy
-            $this->Update();
+            $this->UpdatePower();
+            $this->UpdateEnergy();
             $this->SetTimerInterval('UpdateWaterMeter', 15 * 60 * 1000);
         }
 
         public function UpdatePower()
         {
-            $temperatureIn = $this->GetValue($this->ReadPropertyInteger('TemperatureVariableInputID'));
-            $temperatureOut = $this->GetValue($this->ReadPropertyInteger('TemperatureVariableOutputID'));
-            $waterMeter = $this->GetValue($this->ReadPropertyInteger('WaterMeterID'));
+            $temperatureIn = GetValue($this->ReadPropertyInteger('TemperatureVariableInputID'));
+            $temperatureOut = GetValue($this->ReadPropertyInteger('TemperatureVariableOutputID'));
+            $waterMeter = GetValue($this->ReadPropertyInteger('WaterMeterID'));
 
             //Delta T = temperatureOut - temperatureIn 
             //P = (m * c * Delta T) / t
@@ -79,7 +80,7 @@ declare(strict_types=1);
         public function UpdateEnergy()
         {
             $power = $this->GetValue('Power');
-            $temperature = $this->GetValue($this->ReadPropertyInteger('TemperatureVariableOutputID')) - $this->GetValue($this->ReadPropertyInteger('TemperatureVariableInputID'));
+            $temperature = GetValue($this->ReadPropertyInteger('TemperatureVariableOutputID')) - GetValue($this->ReadPropertyInteger('TemperatureVariableInputID'));
 
             //E = (P * Delta T ) / 3600 * 1000
             $energy = ($power * $temperature) / 3600 * 1000;
