@@ -68,7 +68,7 @@ declare(strict_types=1);
             $temperatureOut = GetValue($this->ReadPropertyInteger('TemperatureVariableOutputID'));
             $waterMeter = GetValue($this->ReadPropertyInteger('WaterMeterID'));
 
-            //Delta T = temperatureOut - temperatureIn 
+            //Delta T = temperatureOut - temperatureIn
             //P = (m * c * Delta T) / t
             //c = 4181 Joule/(Kg*K) <- Specific heat capacity of water
 
