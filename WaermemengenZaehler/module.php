@@ -79,7 +79,7 @@ declare(strict_types=1);
             //c = 4181 Joule/(Kg*K) <- Specific heat capacity of water
 
             $waterMeter = ($waterMeterCurrent - $waterMeterPast) / (60 / 15);
-            $power = ($waterMeter * 4181 * ($temperatureIn - $temperatureOut)) / (15 * 60);
+            $power = ($waterMeter * 4.181 * ($temperatureIn - $temperatureOut)) / (15 * 60);
 
             $this->SetValue('Power', $power);
         }
