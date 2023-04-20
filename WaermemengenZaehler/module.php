@@ -76,7 +76,7 @@ declare(strict_types=1);
             //Delta T = temperatureIn - temperatureOut
             //m = (currentValue - pastValue) / (60/15)
             //P = (m * c * Delta T) / t
-            //c = 4181 Joule/(Kg*K) <- Specific heat capacity of water
+            //c = 4181 Joule/(Kg*K) <- Specific heat capacity of water.
 
             $waterMeter = ($waterMeterCurrent - $waterMeterPast) / (60 / 15);
             $power = (($waterMeter * 4181 * ($temperatureIn - $temperatureOut)) / (15 * 60))*1000;
