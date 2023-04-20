@@ -70,7 +70,7 @@ declare(strict_types=1);
 
             //Delta T = temperatureOut - temperatureIn
             //P = (m * c * Delta T) / t
-            //c = 4181 Joule/(Kg*K) <- Specific heat capacity of water
+            //c = 4181 Joule/(Kg*K) <- Specific heat capacity of water.
 
             $power = ($waterMeter * 4181 * ($temperatureOut - $temperatureIn)) / 15 * 60;
 
