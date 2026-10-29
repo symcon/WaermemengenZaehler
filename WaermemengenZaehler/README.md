@@ -46,8 +46,8 @@ Die Statusvariablen/Kategorien werden automatisch angelegt. Das Löschen einzeln
 
 Name     | Typ     | Beschreibung
 -------- | ------- | -----------
-Leistung | float   | Berechnete Leistung aus der Formel: P = (m \* c \* ( T2 - T1 )) / t
-Energie  | float   | Berechnete Energie aus der Formel: E = (P * ( T2 - T1 )) / t
+Leistung | float   | Berechnete Leistung aus der Formel: P = (m \* c \* ( T1 - T2 )) / t
+Energie  | float   | Berechnete Energie aus der Formel: E = (P * ( T1 - T2 )) / t
 
 ### 7. PHP-Befehlsreferenz
 
@@ -59,7 +59,7 @@ Beispiel:
 
 
 `boolean WMZ_UpdateEnergy(integer $InstanzID);`
-Berechnet die Energie anhand der im Konfigurationsformular eingestellten Variablen
+Berechnet die Energie anhand der im Konfigurationsformular eingestellten Variablen mit der
 
 Beispiel:
 `WMZ_UpdateEnergy(12345);`
